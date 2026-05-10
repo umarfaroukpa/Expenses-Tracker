@@ -1,0 +1,39 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:      #0f0e0c;
+    --paper:    #f5f2ec;
+    --cream:    #ede9e0;
+    --rule:     #d8d3c8;
+    --accent:   #b85c2c;
+    --accent2:  #2c6eb8;
+    --muted:    #7a7269;
+    --success:  #2a7a4b;
+    --danger:   #b82c2c;
+    --shadow:   0 2px 12px rgba(15,14,12,.08);
+    --radius:   6px;
+    --serif:    'DM Serif Display', Georgia, serif;
+    --mono:     'DM Mono', 'Courier New', monospace;
+    --sans:     'Instrument Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 15px;
+  }
+
+  .site-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }

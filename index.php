@@ -6,13 +6,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Expense Tracker</title>
+<link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="site-header">
-  <div class="logo">Led<span>ger</span></div>
+  <div class="logo">Trac<span>ker</span></div>
   <div class="header-date" id="headerDate"></div>
 </header>
 
