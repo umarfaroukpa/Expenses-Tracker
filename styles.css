@@ -37,3 +37,54 @@
     top: 0;
     z-index: 100;
   }
+
+  /* .logo { font-family: var(--serif); font-size: 1.5rem; letter-spacing: -.01em; }
+  .logo span { color: var(--accent); font-style: italic; }
+  .header-date { font-family: var(--mono); font-size: .75rem; color: #999; } */
+
+  /* ── Layout ── */
+  .app { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 60px); }
+
+  .sidebar {
+    background: var(--cream);
+    border-right: 1px solid var(--rule);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .main { padding: 2rem; overflow-y: auto; }
+
+
+  /* ── Cards ── */
+  .card {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .card-header {
+    padding: .875rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--serif);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-body { padding: 1.25rem; }
+
+  /* ── Stat tiles ── */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .stat-label { font-family: var(--mono); font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .4rem; }
+  .stat-value { font-family: var(--serif); font-size: 1.75rem; line-height: 1; }
+  .stat-value.accent  { color: var(--accent); }
+  .stat-value.accent2 { color: var(--accent2); }
