@@ -472,6 +472,23 @@ textarea {
     color: #0f0e0c;
 }
 
+/* Add at the bottom of styles.css */
+.cat-row {
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.cat-row:hover {
+    background: #f0ede6;
+}
+
+.cat-row.active {
+    background: #e8e4d9;
+    font-weight: 500;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
     .app {

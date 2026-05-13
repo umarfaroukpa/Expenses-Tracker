@@ -14,7 +14,7 @@ class ExpenseStorage
         $this->load();
     }
 
-    // ── read ────────────────────────────────────────────────────────────────
+    // read 
 
     public function all(array $filters = []): array
     {
@@ -79,7 +79,7 @@ class ExpenseStorage
         return compact('total', 'byCat', 'byMonth', 'monthTotal');
     }
 
-    // ── write ───────────────────────────────────────────────────────────────
+    // write 
 
     public function create(array $input): array
     {
@@ -118,7 +118,7 @@ class ExpenseStorage
         return true;
     }
 
-    // ── private ─────────────────────────────────────────────────────────────
+    // private
 
     private function validate(array $in): array
     {
