@@ -1,4 +1,23 @@
 <?php
+// Seed some demo data on first run
+$dataFile = __DIR__ . '/data/expenses.json';
+$data = json_decode(file_get_contents($dataFile), true);
+
+if (empty($data['expenses'])) {
+    require_once __DIR__ . '/api/ExpenseStorage.php';
+    $storage = new ExpenseStorage($dataFile);
+    $demos = [
+        ['amount'=>45.50, 'date'=>date('Y-m-d', strtotime('-1 day')),  'description'=>'Grocery run', 'category'=>'Food & Dining', 'notes'=>'Weekly shop'],
+        ['amount'=>12.00, 'date'=>date('Y-m-d', strtotime('-2 days')), 'description'=>'Uber to work', 'category'=>'Transport', 'notes'=>''],
+        ['amount'=>800.00,'date'=>date('Y-m-d', strtotime('-3 days')), 'description'=>'Monthly rent', 'category'=>'Housing', 'notes'=>'May rent'],
+        ['amount'=>35.00, 'date'=>date('Y-m-d', strtotime('-4 days')), 'description'=>'Netflix & Spotify', 'category'=>'Entertainment', 'notes'=>''],
+        ['amount'=>22.75, 'date'=>date('Y-m-d', strtotime('-5 days')), 'description'=>'Lunch with team', 'category'=>'Food & Dining', 'notes'=>''],
+        ['amount'=>60.00, 'date'=>date('Y-m-d', strtotime('-8 days')), 'description'=>'Electricity bill', 'category'=>'Utilities', 'notes'=>''],
+        ['amount'=>150.00,'date'=>date('Y-m-d', strtotime('-10 days')),'description'=>'New shoes', 'category'=>'Shopping', 'notes'=>''],
+        ['amount'=>18.50, 'date'=>date('Y-m-d', strtotime('-12 days')),'description'=>'Bus pass top-up', 'category'=>'Transport', 'notes'=>''],
+    ];
+    foreach ($demos as $d) $storage->create($d);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
