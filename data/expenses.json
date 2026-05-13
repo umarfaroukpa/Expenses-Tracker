@@ -1,76 +1,13 @@
 {
     "expenses": [
         {
-            "amount": 45.5,
-            "date": "2026-05-12",
-            "description": "Grocery run",
-            "category": "Food & Dining",
-            "notes": "Weekly shop",
-            "id": "exp_12f209bd18a5",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 12,
-            "date": "2026-05-11",
-            "description": "Uber to work",
-            "category": "Transport",
-            "notes": "",
-            "id": "exp_d2b5536e1b91",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 800,
-            "date": "2026-05-10",
-            "description": "Monthly rent",
-            "category": "Housing",
-            "notes": "May rent",
-            "id": "exp_06800862b502",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 35,
-            "date": "2026-05-09",
-            "description": "Netflix & Spotify",
-            "category": "Entertainment",
-            "notes": "",
-            "id": "exp_d749bd90a56b",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 22.75,
-            "date": "2026-05-08",
-            "description": "Lunch with team",
-            "category": "Food & Dining",
-            "notes": "",
-            "id": "exp_b0728f9eab91",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 60,
-            "date": "2026-05-05",
-            "description": "Electricity bill",
-            "category": "Utilities",
-            "notes": "",
-            "id": "exp_56b2a54bb5b7",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 150,
-            "date": "2026-05-03",
-            "description": "New shoes",
-            "category": "Shopping",
-            "notes": "",
-            "id": "exp_9721c5302c13",
-            "created_at": "2026-05-13T13:35:27+02:00"
-        },
-        {
-            "amount": 18.5,
-            "date": "2026-05-01",
-            "description": "Bus pass top-up",
-            "category": "Transport",
-            "notes": "",
-            "id": "exp_2e9a58833b98",
-            "created_at": "2026-05-13T13:35:27+02:00"
+            "amount": 20909,
+            "date": "2026-05-13",
+            "description": "Repairs",
+            "category": "Travel",
+            "notes": "vihecle repairs expenses",
+            "id": "exp_48616a3e0510",
+            "created_at": "2026-05-13T17:28:35+02:00"
         }
     ],
     "categories": [
