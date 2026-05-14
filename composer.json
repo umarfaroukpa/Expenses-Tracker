@@ -1,0 +1,14 @@
+{
+    "name": "umarfarouk/expenses-tracker",
+    "description": "Simple Expense Tracker",
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    },
+    "autoload": {
+        "classmap": []
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    }
+}
