@@ -20,25 +20,20 @@ class ExpenseStorage
     ];
 
     public function __construct()
-    {
-        // Database credentials 
-        // Change these to match your MySQL setup.
-        $host = 'localhost';  // almost always localhost
-        $db   = 'ledgeer';     // the database name you created
-        $user = 'root';       // your MySQL username
-        $pass = '';           // your MySQL password (empty string if none)
+{
+    // DATABASE_URL environment variable 
+    $dsn = $_ENV['DATABASE_URL'] ?? null;
 
-        // DSN = "Data Source Name" — tells PDO which driver and database to use
-        $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
-
-        // PDO options:
-        //   ERRMODE_EXCEPTION  → throw an error instead of silently failing (always use this)
-        //   FETCH_ASSOC        → return rows as ['column' => 'value'] arrays, not numbered arrays
-        $this->db = new PDO($dsn, $user, $pass, [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]);
+    if (empty($dsn)) {
+        die("❌ DATABASE_URL is not set in Render Environment Variables");
     }
+
+    $this->db = new PDO($dsn, null, null, [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false,
+    ]);
+}
 
     // READ 
 
