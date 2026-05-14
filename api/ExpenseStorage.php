@@ -19,22 +19,23 @@ class ExpenseStorage
         'Entertainment', 'Shopping', 'Education', 'Utilities', 'Travel', 'Other'
     ];
 
-    public function __construct()
+   public function __construct()
 {
-    // DATABASE_URL environment variable 
-    $dsn = $_ENV['DATABASE_URL'] ?? null;
+    // Read credentials from environment variables 
+    $host = getenv('DB_HOST');
+    $db   = getenv('DB_NAME');
+    $user = getenv('DB_USER');
+    $pass = getenv('DB_PASS');
+    $port = getenv('DB_PORT') ?: '5432';  
 
-    if (empty($dsn)) {
-        die("❌ DATABASE_URL is not set in Render Environment Variables");
-    }
+    // pgsql
+    $dsn = "pgsql:host=$host;port=$port;dbname=$db";
 
-    $this->db = new PDO($dsn, null, null, [
+    $this->db = new PDO($dsn, $user, $pass, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
     ]);
 }
-
     // READ 
 
     public function all(array $filters = []): array
@@ -95,10 +96,10 @@ class ExpenseStorage
         // DATE_FORMAT(NOW(), '%Y-%m') produces the current month, e.g. "2026-05"
         $monthTotal = $this->db->query(
             "SELECT COALESCE(SUM(amount), 0) FROM expenses
-             WHERE DATE_FORMAT(date, '%Y-%m') = DATE_FORMAT(NOW(), '%Y-%m')"
+             WHERE DATE_FORMAT(date, '%Y-%m') = TO_CHAR(NOW(), 'YYYY-MM')"
         )->fetchColumn();
 
-        // GROUP BY category — MySQL groups rows with the same category together
+        // GROUP BY category — PostgreSQL groups rows with the same category together
         // and SUM() gives us the total for each group
         $byCatRows = $this->db->query(
             'SELECT category, SUM(amount) AS amt FROM expenses
